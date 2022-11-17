@@ -2618,7 +2618,7 @@ function AutoGearConsiderAllItems(lootRollItemID, questRewardID, arbitraryItemIn
 
 	--consider all items in bags
 	for bag = 0, NUM_BAG_SLOTS do
-		local slotMax = GetContainerNumSlots(bag)
+		local slotMax = C_Container.GetContainerNumSlots(bag)
 		for slot = 0, slotMax do
 			info = AutoGearReadItemInfo(nil, nil, bag, slot)
 			AutoGearConsiderItem(info, bag, slot, nil)
@@ -4107,10 +4107,10 @@ function AutoGearTooltipHook(tooltip)
 		)
 	end
 end
-GameTooltip:HookScript("OnTooltipSetItem", AutoGearTooltipHook)
-ShoppingTooltip1:HookScript("OnTooltipSetItem", AutoGearTooltipHook)
-ShoppingTooltip2:HookScript("OnTooltipSetItem", AutoGearTooltipHook)
-ItemRefTooltip:HookScript("OnTooltipSetItem", AutoGearTooltipHook)
+-- GameTooltip:HookScript("OnTooltipSetItem", AutoGearTooltipHook)
+-- ShoppingTooltip1:HookScript("OnTooltipSetItem", AutoGearTooltipHook)
+-- ShoppingTooltip2:HookScript("OnTooltipSetItem", AutoGearTooltipHook)
+-- ItemRefTooltip:HookScript("OnTooltipSetItem", AutoGearTooltipHook)
 
 function AutoGearMain()
 	if (GetTime() - tUpdate > 0.05) then
